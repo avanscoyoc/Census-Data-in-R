@@ -22,8 +22,7 @@ To participate in this tutorial, participants are expected to have R experience 
 
 Please bring a laptop with the following: 
 
-* [R version 3.5](https://cloud.r-project.org/) or greater
-* [RStudio integrated development environment (IDE)](https://www.rstudio.com/products/rstudio/download/#download) is highly recommended but not required.
+* [R version 3.5](https://cloud.r-project.org/) or greater with the [RStudio integrated development environment (IDE)](https://www.rstudio.com/products/rstudio/download/#download).
 * The following R packages installed: `sp`, `sf`, `rgdal`, `rgeos`, `raster`, `ggplot2`, `tmap`, `tigris`, `tidycensus` and `mapview`.
 * Obtain a [Census API key](https://api.census.gov/data/key_signup.html)
 
