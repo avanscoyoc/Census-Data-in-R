@@ -272,7 +272,7 @@ These packages *and more* are used by `tidyverse` under the hood.
 `Simple features` for geospatial data objects and methods.
 
 - Next generation R package for working with vector geospatial data
-    - supercedes the `sp` package
+    - supersedes the `sp` package
     
 `sf` includes the functionality of the `sp`, `rgdal`, `rgeos` and `proj4` packages.
 
@@ -341,23 +341,19 @@ For more info see:
 
 ## Install your Census API Key
 
-Use the tidycensus function **census_api_key** to register your API key with tidycensus
+Use the `tidycensus` function **census_api_key** to register your API key with tidycensus
 
 ```{r, eval=F}
 # Install your census api key - long alphanumeric string
-census_api_key("THE_BIG_LONG_ALPHANUMERIC_API_KEY_YOU_GOT_FROM_CENSUS")
+census_api_key("THE_BIG_LONG_ALPHANUMERIC_API_KEY_YOU_GOT_FROM_CENSUS", install = TRUE)
 ```
 
 ## Install your Census API Key
 
-I keep my key in a file so no one can see it
+Alternatively, I keep my key in a file so no one can see it
 ```{r}
 # source (run) an r script that creates a variable with my key
 source("/Users/pattyf/Documents/Dlab/workshops/keys/census_api_key.R")
-
-#register the key
-census_api_key(my_census_api_key)
-
 ```
 ## Set working directory
 
@@ -433,7 +429,7 @@ We can sort and filter the vars2010 dataframe to find it.
 
 ## get_decennial
 
-We can use the tidycensus function **get_decenial** to fetch the 2010 census data for total population by state.
+We can use the tidycensus function **get_decennial** to fetch the 2010 census data for total population by state.
 
 First, check the documentation for the function.
 ```{r, eval=F}
@@ -445,11 +441,13 @@ First, check the documentation for the function.
 Fetch total population by state (**P001001**) from the 2010 census using `get_decennial`.
 
 ```{r}
+## BROKEN!!!!!###
 
 pop2010 <- get_decennial(geography = "state",   # census tabulation unit
                          variables = "P001001", # variable(s) of interest
                          year = 2010)           # census year
-          
+                         
+### Error in gather.default(., key = variable, value = value, -GEOID, -NAME) : object 'NAME' not found
 ```
 
 ## View the Data
@@ -878,7 +876,8 @@ pop2010geo <- get_decennial(geography = "state",
                           year = 2010, 
                           output="wide", 
                           geometry=TRUE) # Fetch geometry with the data for mapping
- 
+                          
+ ##Error: Error in UseMethod("select_") : no applicable method for 'select_' applied to an object of class "character"
 ```
 
 ## Take a look
